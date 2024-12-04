@@ -85,7 +85,7 @@ function Description({ product, loading = false, action = () => {} }) {
             placeholder="Add product description"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            style={{ fieldSizing: "content", maxHeight: "20rem" }}
+            style={{ minHeight: "10rem", maxHeight: "20rem" }}
           />
           <DialogFooter>
             <Button
