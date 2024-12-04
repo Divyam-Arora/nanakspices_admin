@@ -1,0 +1,8 @@
+.order-icon {
+  transition: transform 0.2s;
+  transform: rotateX(180deg);
+}
+
+.order-icon.desc {
+  transform: rotateX(0deg);
+}
