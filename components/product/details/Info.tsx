@@ -69,9 +69,10 @@ function Info({ product, loading = false }) {
       method: "PUT",
       protected: true,
       body,
-      action: (product) => {
-        info.categoryId == "new" && dispatch(inventoryActions.refresh());
+      action: (p) => {
+        // console.log(product);
         refresh(product.id);
+        info.categoryId == "new" && dispatch(inventoryActions.refresh());
         setModalOpen(false);
       },
     });
@@ -191,7 +192,9 @@ function Info({ product, loading = false }) {
               disabled={data.updated.isLoading}
               onClick={() => editHandler()}
             >
-              {data.updated.isLoading && <ReloadIcon className="spin mr-2" />}
+              {data.updated.isLoading && (
+                <ReloadIcon className="animate-spin mr-2" />
+              )}
               <p>Save</p>
             </Button>
           </DialogFooter>

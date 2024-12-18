@@ -4,6 +4,7 @@ import appSlice from "./appSlice";
 import orderSlice from "./orderSlice";
 import pageSlice from "./pageSlice";
 import inventorySlice from "./inventotySlice";
+import bottomNavSlice from "./bottomNavSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     order: orderSlice.reducer,
     page: pageSlice.reducer,
     inventory: inventorySlice.reducer,
+    bottomNav: bottomNavSlice.reducer,
   },
 });
 

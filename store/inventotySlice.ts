@@ -16,6 +16,7 @@ const inventorySlice = createSlice({
       );
       if (otherIndex != -1)
         state.exactCategories = state.categories.toSpliced(otherIndex, 1);
+      else state.exactCategories = state.categories;
     },
     setCategory(state, action) {
       state.category = action.payload.category;

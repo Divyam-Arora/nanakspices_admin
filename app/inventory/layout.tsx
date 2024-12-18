@@ -1,7 +1,8 @@
+import ContentPage from "@/components/common/ContentPage";
 import React from "react";
 
 function layout({ children }) {
-  return <div className="page">{children}</div>;
+  return <ContentPage>{children}</ContentPage>;
 }
 
 export default layout;

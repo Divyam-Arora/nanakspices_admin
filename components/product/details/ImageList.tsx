@@ -22,11 +22,11 @@ function ImageList({ list, productId, loading = false }) {
           </div>
         )}
       </div>
-      <div className="flex gap-2 overflow-y-auto">
+      <div className="flex gap-2 overflow-y-auto snap-mandatory snap-x">
         {list.map((item) => (
           <div
             key={item.id}
-            className="h-48 w-48 shrink-0 bg-primary-foreground p-2 rounded-lg"
+            className="h-48 w-full sm:w-48 shrink-0 bg-primary-foreground p-2 rounded-lg snap-start"
           >
             <img src={item.url} className="w-full h-full object-contain" />
           </div>

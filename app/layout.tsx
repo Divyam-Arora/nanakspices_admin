@@ -7,6 +7,7 @@ import SideNav from "@/components/sidebars/sideNav";
 import Providers from "@/wrappers/Providers";
 import { Toaster } from "sonner";
 import Data from "@/wrappers/Data";
+import BottomNav from "@/components/sidebars/bottomNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,17 +25,20 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Toaster />
-        <main className="layout-grid">
-          <div className="pt-4 pb-4 z-10">
-            <SideNav />
-          </div>
-          <section className="page-container">
-            <Providers>
-              <Data>{children}</Data>
-            </Providers>
-          </section>
-          <div></div>
-        </main>
+        <Providers>
+          <Data>
+            <main className="layout-grid">
+              <div className="pt-4 pb-4 z-10 hidden sm:block">
+                <SideNav />
+              </div>
+              <section className="page-container">
+                {children}
+                <BottomNav />
+              </section>
+              <div className="hidden md:block"></div>
+            </main>
+          </Data>
+        </Providers>
       </body>
     </html>
   );

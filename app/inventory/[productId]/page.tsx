@@ -17,10 +17,10 @@ async function Page({ params }) {
   const product = await getData(`/admin/product/${params.productId}`);
   console.log(product);
 
-  const refresh = async () => {
-    "use server";
-    revalidatePath(`/inventory/${product.id}`, "page");
-  };
+  // const refresh = async () => {
+  //   "use server";
+  //   revalidatePath(`/inventory/${product.id}`, "page");
+  // };
   return (
     <>
       <div className="page-header-container sticky top-0">

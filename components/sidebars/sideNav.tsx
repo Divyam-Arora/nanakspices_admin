@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import classes from "./sideNav.module.css";
-import {
-  HomeRounded,
-  InventoryRounded,
-  LogoutRounded,
-  MenuRounded,
-  PeopleRounded,
-  ReceiptLongRounded,
-} from "@mui/icons-material";
+import { LogoutRounded, MenuRounded } from "@mui/icons-material";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import {
@@ -19,13 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { deleteSession } from "@/lib/session";
-
-const PAGES = [
-  { name: "Home", link: "/dashboard", icon: HomeRounded },
-  { name: "Orders", link: "/orders", icon: ReceiptLongRounded },
-  { name: "Inventory", link: "/inventory", icon: InventoryRounded },
-  { name: "Customers", link: "/customers", icon: PeopleRounded },
-];
+import { PAGES } from "./PAGES";
 
 const SideNav = () => {
   const pathName = usePathname();
@@ -46,7 +33,8 @@ const SideNav = () => {
                   { [classes.active]: pathName.startsWith(page.link) },
                 ])}
               >
-                <page.icon color="action" /> <p>{page.name}</p>
+                <page.icon color="action" />{" "}
+                <p className={classes.label}>{page.name}</p>
               </div>
             </Link>
           </li>
@@ -57,10 +45,10 @@ const SideNav = () => {
           <DropdownMenuTrigger>
             <div className={clsx([classes.item, "cursor-pointer"])}>
               <MenuRounded color="action" />
-              <p>More</p>
+              <p className={classes.label}>More</p>
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56">
+          <DropdownMenuContent className="w-56 ml-4">
             <DropdownMenuItem onClick={() => deleteSession()}>
               <div className="flex gap-2 items-center">
                 <LogoutRounded color="action" />
