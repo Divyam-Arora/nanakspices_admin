@@ -58,7 +58,7 @@ const BottomNav = () => {
             <div className="flex flex-col p-2 gap-2">
               <Button
                 variant="ghost"
-                className="flex justify-start gap-4 p-4"
+                className="flex justify-start gap-4 p-4 h-auto"
                 onClick={() => {
                   setDrawerOpen(false);
                   deleteSession();
